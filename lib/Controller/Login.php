@@ -6,7 +6,7 @@ class Login extends \MyApp\Controller {
  
   public function run() {
     if ($this->isLoggedIn()) {
-      header('Location: /index.php');
+      header('index.php');
       exit;
     }
  

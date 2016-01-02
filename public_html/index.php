@@ -34,5 +34,20 @@ $app->run();
       <?php endforeach; ?>
     </ul>
   </div>
+  <p>スレッド作成</p>
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <td><input type="text" name="title" /></td>
+    </tr>
+    <tr>
+      <th>内容</th>
+      <td><textarea name="body"></textarea></td>
+    </tr>
+    <tr>
+      <td><input type="hidden" name="type" value="create" /></td>
+      <td><input type="submit" name="submit" value="作成" /></td>
+    </tr>
+  </table>
 </body>
 </html>
