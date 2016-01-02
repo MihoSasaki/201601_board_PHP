@@ -26,6 +26,8 @@ $result = $sql->fetchAll(PDO::FETCH_CLASS, 'User');
 //disconnect
     //$db = null;
 
+
+
 }
 catch(PDOException $e){
   echo $e ->getMessage();
