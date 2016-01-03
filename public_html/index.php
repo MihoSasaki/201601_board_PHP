@@ -1,6 +1,5 @@
 <?php
- 
-// ユーザーの一覧
+
  
 require_once(__DIR__ . '/../config/config.php');
  
@@ -49,5 +48,13 @@ $app->run();
       <td><input type="submit" name="submit" value="作成" /></td>
     </tr>
   </table>
+  <table class="table table-striped">
+   <p>ここに内容を表示する。</p>
+     <tr>
+       <th>タイトル</th>
+       <th>内容</th>
+       <th>削除</th>
+     </tr>
+    </table>
 </body>
 </html>

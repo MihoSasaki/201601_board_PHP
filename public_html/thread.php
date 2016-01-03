@@ -50,6 +50,7 @@ foreach ($sql_res as $res) {
   echo "<td>作成日時:$res{$row['body']}</td>";
   echo "<td>タイトル:$res{$row['created_at']}</td>";
   echo "</tr>";
+  echo "<td><a href='res_del.php?thread_id=$thread_id'>削除</a></td>";
   }
 }catch(PDOException $e){
   var_dump($e);

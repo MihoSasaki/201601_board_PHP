@@ -14,14 +14,6 @@ class Index extends \MyApp\Controller {
     // get users info
     $userModel = new \MyApp\Model\User();
     $this->setValues('users', $userModel->findAll());
-  
-class User{
-  public function show(){
-    echo "<tr><td><a href=thread2.php?id= $this->id>";
-    echo "$this->title</a></td>";    
-    echo "<td>$this->created_at</td></tr><br>";
-  }
-}
 
 try{
 //connect
@@ -30,9 +22,13 @@ try{
 
 //スレッド取得
 $sql = $db->query("select * from threads order by created_at desc");
-$result = $sql->fetchAll(PDO::FETCH_CLASS, 'User');
+$result = $sql->FETCHAll(PDO::FETCH_CLASS);
   foreach($result as $thread){
   $thread->show(); 
+  echo "<tr><td><a href=thread.php?id= $this->id>";
+  echo "$this->title</a></td>";    
+  echo "<td>$this->created_at</td></tr><br>";
+  echo "<td><a href='thread_del.php?id=$id'>削除</a></td>";
 }
 //disconnect
     //$db = null;
@@ -42,7 +38,6 @@ if($type=='create'){
   $sql_thread = $db->prepare("update thread set title = :title body = :body　name = :name created_at = now()");
  $sql_thread->bindValue(':title', $_POST['title'], PDO::PARAM_STR);
  $sql_thread->bindValue(':body', $_POST['body'], PDO::PARAM_STR);
- 
  $sql_thread->execute();
 }
 

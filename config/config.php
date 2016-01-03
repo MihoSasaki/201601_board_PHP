@@ -7,7 +7,7 @@ define('DB_USERNAME','dbuser');
 define('DB_PASSWORD','YUIyui15');
 define('PDO_DSN','mysql:dbhost=localhost;dbname=' . DB_DATABASE);
 
-define('SITE_URL', '../localhost/messageboard/' );
+define('SITE_URL', '../messageboard/' );
 
 require_once (__DIR__.'/../lib/functions.php');
 
